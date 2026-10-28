@@ -1,0 +1,18 @@
+services: 
+  jellyswarrm-proxy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: jellyswarrm-proxy:latest
+    container_name: jellyswarrm-proxy
+    ports:
+      - "3000:3000"
+    volumes:
+      - jellyswarrm-data:/app/data
+    environment:
+      - JELLYSWARRM_USERNAME=${JELLYSWARRM_USERNAME}
+      - JELLYSWARRM_PASSWORD=${JELLYSWARRM_PASSWORD}
+      - RUST_LOG=jellyswarrm_proxy=debug 
+
+  volumes:
+    jellyswarrm-data:
