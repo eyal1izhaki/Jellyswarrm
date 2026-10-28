@@ -17,7 +17,7 @@ RUN --mount=type=cache,target=/root/.npm \
 
 # Copy UI source code and git metadata
 COPY ui/ ./
-COPY .git/modules/ui/ /app/.git/modules/ui/
+COPY .gi[t]/modules/ui/ /app/.git/modules/ui/
 
 # Get and print UI version info
 RUN UI_VERSION=$(node -p "require('./package.json').version") && \
