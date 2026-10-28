@@ -12,5 +12,5 @@ services:
       - JELLYSWARRM_PASSWORD=${JELLYSWARRM_PASSWORD}
       - RUST_LOG=jellyswarrm_proxy=debug 
 
-  volumes:
-    jellyswarrm-data:
+volumes:
+  jellyswarrm-data:
